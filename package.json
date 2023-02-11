@@ -1,0 +1,36 @@
+{
+  "name": "gamegeek",
+  "version": "1.0.0",
+  "description": "Can you call yourself a game geek ? This console game will honor you with this title, but it won't be easy !",
+  "main": "app.mjs",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "game",
+    "console",
+    "game",
+    "game",
+    "geek",
+    "gamegeek",
+    "test",
+    "a",
+    "game",
+    "geek."
+  ],
+  "author": "Jack Scraper",
+  "license": "ISC",
+
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "chalk-animation": "^1.6.0",
+    "figlet": "^1.5.2",
+    "gradient-string": "^2.0.0",
+    "inquirer": "^8.2.0",
+    "nanospinner": "^1.0.0",
+    "readline-sync": "^1.4.10",
+    "terminal-image": "^2.0.0",
+    "press-any-key": "^0.1.1"
+  }
+}
