@@ -12,6 +12,8 @@ import got from 'got';
 
 let playerPoints = 0;
 let bossImage = '';
+let resultImage = '';
+
 process.title = "GAME-GEEK" 
 
 export const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
@@ -28,88 +30,124 @@ export const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
         }
       }
       
-      function winner() {
+      async function winner() {
         console.clear();
       
         switch (playerPoints) {
           case 0:
-;  
-            console.log(`
-            ░█████╗░
-            ██╔══██╗
-            ██║░░██║
-            ██║░░██║
-            ╚█████╔╝
-            ░╚════╝░`)
+           
+         resultImage = await got('https://i.ibb.co/gPkDfqm/58967e8c0803320bf17c2fb7.png').buffer();
+        console.log(await terminalImage.buffer(resultImage));
+        console.log(`Your result: 0`)
 
             console.log(`https://www.youtube.com/watch?v=dQw4w9WgXcQ`);
 
             break;
         
             case 1:
-            
+
+        resultImage = await got('https://i.ibb.co/QJ6krXc/unnamed.png').buffer();
+        console.log(await terminalImage.buffer(resultImage));
+
+          console.log(`Your result: 1`)  
           console.log(`Only ${playerPoints}, go play Fortnite newbie !`)
 
             break;
 
             case 2:
             
+        resultImage = await got('https://i.ibb.co/QJ6krXc/unnamed.png').buffer();
+        console.log(await terminalImage.buffer(resultImage));
+
+          console.log(`Your result: 2`)  
+
             console.log(`Only ${playerPoints}, go play Fortnite newbie !`)
   
               break;
 
               case 3:
             
+              resultImage = await got('https://i.ibb.co/QJ6krXc/unnamed.png').buffer();
+              console.log(await terminalImage.buffer(resultImage));
+      
+                console.log(`Your result: 3`) 
+
               console.log(`Only ${playerPoints}, go play Fortnite newbie !`)
     
                 break;
             
             case 4 :
 
-            console.log(`Well ${playerPoints} you know something, but it's not enought`)
+            resultImage = await got('https://toppng.com/uploads/preview/dark-souls-dark-souls-cosplay-elite-knight-11563009641gq7ui7ou6v.png').buffer();
+            console.log(await terminalImage.buffer(resultImage));
+    
+              console.log(`Your result: 4`) 
+
+            console.log(`Well ${playerPoints} you know something, but it's not enought to be a Game Geek`)
             
             break;
 
             case 5 :
 
-            console.log(`Well ${playerPoints} you know something, but it's not enought`)
+            resultImage = await got('https://toppng.com/uploads/preview/dark-souls-dark-souls-cosplay-elite-knight-11563009641gq7ui7ou6v.png').buffer();
+            console.log(await terminalImage.buffer(resultImage));
+    
+              console.log(`Your result: 5`) 
+
+            console.log(`Well ${playerPoints} you know something, but it's not enought to be a Game Geek`)
             
             break;
             
             case 6 :
 
-            console.log(`Well ${playerPoints} you know something, but it's not enought`)
+            resultImage = await got('https://i.ibb.co/2vtkqp2/fallout-4-fallout-new-vegas-fallout-3-fallout-2-png-favpng-nr4n-X5wpj-HMUve-YKEj9-Bnaij7.jpg').buffer();
+            console.log(await terminalImage.buffer(resultImage));
+    
+              console.log(`Your result: 6`) 
+
+              console.log(`A ${playerPoints} average score game soldier, play a little more`)
             
             break;
 
             case 7:
+
+            resultImage = await got('https://i.ibb.co/2vtkqp2/fallout-4-fallout-new-vegas-fallout-3-fallout-2-png-favpng-nr4n-X5wpj-HMUve-YKEj9-Bnaij7.jpg').buffer();
+            console.log(await terminalImage.buffer(resultImage));
+    
+              console.log(`Your result: 7`) 
 
             console.log(`A ${playerPoints} average score game soldier, play a little more`)
 
             break;
 
             case 8:
+
+            resultImage = await got('https://i.ibb.co/DbZXvpf/png-transparent-fallout-new-vegas-fallout-4-fallout-2-the-vault-fallout-video-game-fictional-charact.png').buffer();
+            console.log(await terminalImage.buffer(resultImage));
+    
+              console.log(`Your result: 8`) 
+
             console.log(`Wow ${playerPoints}, you went through a lot of adventures,
              you deserve to call yourself a Game Geek friend!`)
             break;
 
             case 9:
+
+            resultImage = await got('https://i.ibb.co/DbZXvpf/png-transparent-fallout-new-vegas-fallout-4-fallout-2-the-vault-fallout-video-game-fictional-charact.png').buffer();
+            console.log(await terminalImage.buffer(resultImage));
+    
+              console.log(`Your result: 9`) 
+
             console.log(`Wow ${playerPoints}, you went through a lot of adventures,
              you deserve to call yourself a Game Geek friend!`)
             break;
 
             case 10:
 
-            console.log(`WICTORy !!!
-          
+            resultImage = await got('https://i.ibb.co/xJrJZ0b/trophy-42191.png').buffer();
+            console.log(await terminalImage.buffer(resultImage));
 
-            ░░███╗░░░█████╗░
-            ░████║░░██╔══██╗
-            ██╔██║░░██║░░██║
-            ╚═╝██║░░██║░░██║
-            ███████╗╚█████╔╝
-            ╚══════╝░╚════╝░
-            `)
+            console.log(`Your result: 10 !!!`)           
 
             console.log(`I'm sorry I wasted your time, you are really cool! Of course you are a GAME-GEEK !!!`)
             break;
@@ -282,7 +320,7 @@ export const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
       await question9();
       await question10();
       winner();
-      console.log(playerPoints)
+  
 
     
 
