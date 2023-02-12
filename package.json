@@ -1,8 +1,8 @@
 {
   "name": "gamegeek",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "Can you call yourself a game geek ? This console game will honor you with this title, but it won't be easy !",
-  "main": "app.mjs",
+  "main": "bin/app.mjs",
   "type": "module",
   "keywords": [
     "game",
@@ -18,14 +18,15 @@
   ],
   "author": "Jack Scraper",
   "license": "ISC",
-   "bin": "./app.mjs",
+  "bin": "bin/app.mjs",
   "dependencies": {
     "chalk": "^4.1.2",
     "chalk-animation": "^1.6.0",
+    "got": "^12.5.3",
     "inquirer": "^8.2.0",
     "nanospinner": "^1.0.0",
+    "press-any-key": "^0.1.1",
     "readline-sync": "^1.4.10",
-    "terminal-image": "^2.0.0",
-    "press-any-key": "^0.1.1"
+    "terminal-image": "^2.0.0"
   }
 }

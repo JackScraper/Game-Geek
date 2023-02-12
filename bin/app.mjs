@@ -7,59 +7,14 @@ import chalkAnimation from 'chalk-animation';
 import pressAnyKey from 'press-any-key';
 import terminalImage from 'terminal-image';
 import { createSpinner } from 'nanospinner';
+import { welcome } from './welcomeScreen.mjs';
+import got from 'got';
 
 let playerPoints = 0;
+let bossImage = '';
 process.title = "GAME-GEEK" 
-const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
 
-async function welcome() {
-    console.clear();
-    const welcomeTitle = chalkAnimation.glitch(chalk.green(
-    
-            `
-                        ░██████╗░░█████╗░███╗░░░███╗███████╗░░░░░░░██████╗░███████╗███████╗██╗░░██╗
-                        ██╔════╝░██╔══██╗████╗░████║██╔════╝░░░░░░██╔════╝░██╔════╝██╔════╝██║░██╔╝
-                        ██║░░██╗░███████║██╔████╔██║█████╗░░█████╗██║░░██╗░█████╗░░█████╗░░█████═╝░
-                        ██║░░╚██╗██╔══██║██║╚██╔╝██║██╔══╝░░╚════╝██║░░╚██╗██╔══╝░░██╔══╝░░██╔═██╗░
-                        ╚██████╔╝██║░░██║██║░╚═╝░██║███████╗░░░░░░╚██████╔╝███████╗███████╗██║░╚██╗
-                        ░╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚══════╝░░░░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚═╝ )]`
-    ));
-    await sleep(1000);
-    console.clear();
-    
-       console.log(chalk.greenBright(`
-                        ░██████╗░░█████╗░███╗░░░███╗███████╗░░░░░░░██████╗░███████╗███████╗██╗░░██╗
-                        ██╔════╝░██╔══██╗████╗░████║██╔════╝░░░░░░██╔════╝░██╔════╝██╔════╝██║░██╔╝
-                        ██║░░██╗░███████║██╔████╔██║█████╗░░█████╗██║░░██╗░█████╗░░█████╗░░█████═╝░
-                        ██║░░╚██╗██╔══██║██║╚██╔╝██║██╔══╝░░╚════╝██║░░╚██╗██╔══╝░░██╔══╝░░██╔═██╗░
-                        ╚██████╔╝██║░░██║██║░╚═╝░██║███████╗░░░░░░╚██████╔╝███████╗███████╗██║░╚██╗
-                        ░╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚══════╝░░░░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚═╝
-                        
-                        `));
-       
-
-              chalk.white(
-                console.log(`
-                                                      ${chalk.bgRedBright(`TEST YOURSELF`)} 
-
-                      Dude you've played all the video games and consider yourself a true gaming geek?
-                                Well let's see, you will need to guess the final Bosses
-                                             from only one pixel picture 
-                                        for each guessed you will receive a bal
-        `));
-
-       const disc = chalkAnimation.neon(`   
-                                                 PRESS ANY KEY TO START`
-                                 );
-
-await sleep(500)
-
-await pressAnyKey(" ", )
-
-   console.clear()
-   await welcomeTitle.stop();
-   await disc.stop()
-    }
+export const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
 
     async function handleAnswer(isCorrect) {
         const spinner = createSpinner(`Next boss is...`).start();
@@ -79,15 +34,15 @@ await pressAnyKey(" ", )
         switch (playerPoints) {
           case 0:
 ;  
-            console.log(`https://www.youtube.com/watch?v=dQw4w9WgXcQ`);
-            chalkAnimation.neon(`
-           
+            console.log(`
             ░█████╗░
             ██╔══██╗
             ██║░░██║
             ██║░░██║
             ╚█████╔╝
             ░╚════╝░`)
+
+            console.log(`https://www.youtube.com/watch?v=dQw4w9WgXcQ`);
 
             break;
         
@@ -144,21 +99,25 @@ await pressAnyKey(" ", )
             break;
 
             case 10:
-            chalkAnimation.pulse(`
+
+            console.log(`WICTORy !!!
+          
+
             ░░███╗░░░█████╗░
             ░████║░░██╔══██╗
             ██╔██║░░██║░░██║
             ╚═╝██║░░██║░░██║
             ███████╗╚█████╔╝
             ╚══════╝░╚════╝░
-            
             `)
 
             console.log(`I'm sorry I wasted your time, you are really cool! Of course you are a GAME-GEEK !!!`)
             break;
 
             default:
+
             console.log(`Something is wrong ` + playerPoints)
+
             break;
         }
 
@@ -166,11 +125,12 @@ await pressAnyKey(" ", )
       }
       
       async function question1() {
-      console.log(await terminalImage.file('GameGeek/images/Ender_Dragon.jpg'));
+        bossImage = await got('https://i.ibb.co/M9Nv5pV/Ender-Dragon.jpg').buffer();
+        console.log(await terminalImage.buffer(bossImage));
         const answers = await inquirer.prompt({
           name: 'question_1',
           type: 'list',
-          message: 'Even the neighborhood kids know how correct\n',
+          message: 'Fear of neighboring children\n',
           choices: [
             'Black Dragon',
             'Ender Dragon',
@@ -183,7 +143,8 @@ await pressAnyKey(" ", )
       }
       
       async function question2() {
-      console.log(await terminalImage.file('GameGeek/images/shao-kahn.jpg'));
+        bossImage = await got('https://i.ibb.co/SNtHsvC/shao-kahn.jpg').buffer();
+        console.log(await terminalImage.buffer(bossImage));
         const answers = await inquirer.prompt({
           name: 'question_2',
           type: 'list',
@@ -194,7 +155,8 @@ await pressAnyKey(" ", )
       }
       
       async function question3() {
-      console.log(await terminalImage.file('GameGeek/images/eredin.jpg'));
+        bossImage = await got('https://i.ibb.co/p3G6r1J/eredin.jpg').buffer();
+        console.log(await terminalImage.buffer(bossImage));
         const answers = await inquirer.prompt({
           name: 'question_3',
           type: 'list',
@@ -206,7 +168,8 @@ await pressAnyKey(" ", )
       }
       
       async function question4() {
-        console.log(await terminalImage.file('GameGeek/images/Alduin.jpg'));
+        bossImage = await got('https://i.ibb.co/3rZPKgY/Alduin.jpg').buffer();
+        console.log(await terminalImage.buffer(bossImage));
         const answers = await inquirer.prompt({
           name: 'question_4',
           type: 'list',
@@ -222,7 +185,8 @@ await pressAnyKey(" ", )
       }
       
       async function question5() {
-        console.log(await terminalImage.file('GameGeek/images/Adam_Smasher.jpg'));
+        bossImage = await got('https://i.ibb.co/Sd66q1f/Adam-Smasher.jpg').buffer();
+        console.log(await terminalImage.buffer(bossImage));
         const answers = await inquirer.prompt({
           name: 'question_5',
           type: 'list',
@@ -235,7 +199,8 @@ await pressAnyKey(" ", )
       };
 
       async function question6() {
-        console.log(await terminalImage.file('GameGeek/images/alex_mercer.jpg'));
+        bossImage = await got('https://i.ibb.co/3zkGMqB/alex-mercer.jpg').buffer();
+        console.log(await terminalImage.buffer(bossImage));
         const answers = await inquirer.prompt({
           name: 'question_6',
           type: 'list',
@@ -248,7 +213,8 @@ await pressAnyKey(" ", )
       }
 
       async function question7() {
-        console.log(await terminalImage.file('GameGeek/images/Darth_Malak.jpg'));
+        bossImage = await got('https://i.ibb.co/x7ndv6D/Darth-Malak.jpg').buffer();
+        console.log(await terminalImage.buffer(bossImage));
         const answers = await inquirer.prompt({
           name: 'question_7',
           type: 'list',
@@ -261,7 +227,8 @@ await pressAnyKey(" ", )
       };
 
       async function question8() {
-        console.log(await terminalImage.file('GameGeek/images/jack_of_blades.jpg'));
+        bossImage = await got('https://i.ibb.co/sP3yV6Y/jack-of-blades.jpg').buffer();
+        console.log(await terminalImage.buffer(bossImage));
         const answers = await inquirer.prompt({
           name: 'question_8',
           type: 'list',
@@ -274,7 +241,8 @@ await pressAnyKey(" ", )
       };
 
       async function question9() {
-        console.log(await terminalImage.file('GameGeek/images/Lanius.jpg'));
+        bossImage = await got('https://i.ibb.co/gS59gns/Lanius.jpg').buffer();
+        console.log(await terminalImage.buffer(bossImage));
         const answers = await inquirer.prompt({
           name: 'question_9',
           type: 'list',
@@ -287,7 +255,8 @@ await pressAnyKey(" ", )
       };
 
       async function question10() {
-        console.log(await terminalImage.file('GameGeek/images/Frank_Horrigan.jpg'));
+        bossImage = await got('https://i.ibb.co/2yLPdZc/Frank-Horrigan.jpg').buffer();
+        console.log(await terminalImage.buffer(bossImage));
         const answers = await inquirer.prompt({
           name: 'question_10',
           type: 'list',
