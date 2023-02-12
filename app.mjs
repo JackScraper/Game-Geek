@@ -3,16 +3,13 @@
 
 import chalk from 'chalk';
 import inquirer from 'inquirer';
-import gradient from 'gradient-string';
 import chalkAnimation from 'chalk-animation';
 import pressAnyKey from 'press-any-key';
 import terminalImage from 'terminal-image';
-import figlet from 'figlet';
 import { createSpinner } from 'nanospinner';
 
-let playerName;
 let playerPoints = 0;
-
+process.title = "GAME-GEEK" 
 const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
 
 async function welcome() {
@@ -169,7 +166,7 @@ await pressAnyKey(" ", )
       }
       
       async function question1() {
-      console.log(await terminalImage.file('images/Ender_Dragon.jpg'));
+      console.log(await terminalImage.file('GameGeek/images/Ender_Dragon.jpg'));
         const answers = await inquirer.prompt({
           name: 'question_1',
           type: 'list',
@@ -186,7 +183,7 @@ await pressAnyKey(" ", )
       }
       
       async function question2() {
-      console.log(await terminalImage.file('images/shao-kahn.jpg'));
+      console.log(await terminalImage.file('GameGeek/images/shao-kahn.jpg'));
         const answers = await inquirer.prompt({
           name: 'question_2',
           type: 'list',
@@ -197,7 +194,7 @@ await pressAnyKey(" ", )
       }
       
       async function question3() {
-      console.log(await terminalImage.file('images/eredin.jpg'));
+      console.log(await terminalImage.file('GameGeek/images/eredin.jpg'));
         const answers = await inquirer.prompt({
           name: 'question_3',
           type: 'list',
@@ -209,7 +206,7 @@ await pressAnyKey(" ", )
       }
       
       async function question4() {
-        console.log(await terminalImage.file('images/Alduin.jpg'));
+        console.log(await terminalImage.file('GameGeek/images/Alduin.jpg'));
         const answers = await inquirer.prompt({
           name: 'question_4',
           type: 'list',
@@ -225,7 +222,7 @@ await pressAnyKey(" ", )
       }
       
       async function question5() {
-        console.log(await terminalImage.file('images/Adam_Smasher.jpg'));
+        console.log(await terminalImage.file('GameGeek/images/Adam_Smasher.jpg'));
         const answers = await inquirer.prompt({
           name: 'question_5',
           type: 'list',
@@ -238,7 +235,7 @@ await pressAnyKey(" ", )
       };
 
       async function question6() {
-        console.log(await terminalImage.file('images/alex_mercer.jpg'));
+        console.log(await terminalImage.file('GameGeek/images/alex_mercer.jpg'));
         const answers = await inquirer.prompt({
           name: 'question_6',
           type: 'list',
@@ -251,7 +248,7 @@ await pressAnyKey(" ", )
       }
 
       async function question7() {
-        console.log(await terminalImage.file('images/Darth_Malak.jpg'));
+        console.log(await terminalImage.file('GameGeek/images/Darth_Malak.jpg'));
         const answers = await inquirer.prompt({
           name: 'question_7',
           type: 'list',
@@ -264,7 +261,7 @@ await pressAnyKey(" ", )
       };
 
       async function question8() {
-        console.log(await terminalImage.file('images/jack_of_blades.jpg'));
+        console.log(await terminalImage.file('GameGeek/images/jack_of_blades.jpg'));
         const answers = await inquirer.prompt({
           name: 'question_8',
           type: 'list',
@@ -277,7 +274,7 @@ await pressAnyKey(" ", )
       };
 
       async function question9() {
-        console.log(await terminalImage.file('images/Lanius.jpg'));
+        console.log(await terminalImage.file('GameGeek/images/Lanius.jpg'));
         const answers = await inquirer.prompt({
           name: 'question_9',
           type: 'list',
@@ -290,7 +287,7 @@ await pressAnyKey(" ", )
       };
 
       async function question10() {
-        console.log(await terminalImage.file('images/Frank_Horrigan.jpg'));
+        console.log(await terminalImage.file('GameGeek/images/Frank_Horrigan.jpg'));
         const answers = await inquirer.prompt({
           name: 'question_10',
           type: 'list',
