@@ -1,6 +1,6 @@
 {
   "name": "gamegeek",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Can you call yourself a game geek ? This console game will honor you with this title, but it won't be easy !",
   "main": "bin/app.mjs",
   "type": "module",
